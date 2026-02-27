@@ -4,7 +4,7 @@
  */
 
 // Placeholder for your production URL (e.g., https://your-app-name.onrender.com)
-const PRODUCTION_API_URL = 'https://your-backend-api-url.com';
+const PRODUCTION_API_URL = 'https://contacts-manager-app.up.railway.app';
 
 const IS_LOCALHOST = 
     window.location.hostname === 'localhost' || 
