@@ -23,10 +23,11 @@ const utils = {
             errors.push('Phone must be at least 10 digits');
 
         if (
-            contact.email &&
+            !contact.email || 
             !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email)
-        )
-            errors.push('Invalid email address');
+        ) {
+            errors.push('Valid email address is required');
+        }
 
         return {
             isValid: errors.length === 0,

@@ -100,7 +100,7 @@ class ContactsApp {
         const data = {
             name: this.form.name.value.trim(),
             phone: this.form.phone.value.trim(),
-            email: this.form.email.value.trim() || null
+            email: this.form.email.value.trim()
         };
 
         const validation = utils.validateContact(data);
