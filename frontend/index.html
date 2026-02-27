@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contacts Manager</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📱 Contacts Manager</h1>
+            <p class="subtitle">API-driven contact management</p>
+        </header>
+
+        <!-- Messages -->
+        <div id="message-container" class="messages"></div>
+
+        <!-- Form -->
+        <section class="form-section">
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" id="phone" name="phone" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" name="email" />
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button id="submit-btn" class="btn btn-primary" type="submit">
+                        <span class="btn-text">Add Contact</span>
+                        <span class="btn-loader" hidden>Saving...</span>
+                    </button>
+
+                    <button id="cancel-btn" type="button" class="btn btn-secondary" hidden>
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Contacts -->
+        <section class="contacts-section">
+            <div class="section-header">
+                <h2>Contacts (<span id="contacts-count">0</span>)</h2>
+                <div id="loading-contacts" class="loading" hidden>
+                    <div class="spinner"></div> Loading...
+                </div>
+            </div>
+
+            <div id="contacts-list" class="contacts-grid"></div>
+
+            <div id="no-contacts" class="empty-state" hidden>
+                <div class="empty-icon">📇</div>
+                <p>No contacts found</p>
+            </div>
+
+            <div id="error-contacts" class="error-state" hidden></div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/utils.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
